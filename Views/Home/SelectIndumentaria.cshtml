@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "SelectIndumentaria";
+}
+
+<form action='@Url.Action("GuardarIndumentaria")'>
+
+<h1 style="background: rgb(252, 195, 195);"> <b>Indumentaria</b></h1><br>
+<div>
+ @foreach (string item in @ViewBag.ListaEquipos)
+    {
+       <td><tr>@item</tr></td> 
+    }
+    <br>
+        <label for="quantity" style="background: rgb(252, 195, 195);">Elegi el equipo</label>
+        <input type="number" id="quantity" name="Equipo" min="1" max="10">
+    
+</div><br><br><br>
+<div>
+    @foreach (string item in @ViewBag.ListaRemeras)
+    {
+       <td> <tr>  <img src="/Img_Camiseta/@item" height="140px" width="100px"></tr></td> 
+    }
+    
+        <label for="quantity" style="background: rgb(252, 195, 195);">Elegi la remera</label>
+        <input type="number" id="quantity" name="Remera" min="1" max="10">
+    
+</div><br><br><br>
+<div>
+    @foreach (string item in @ViewBag.ListaPantalones)
+    {
+       <td> <tr> <img src="/Img_Pantalon/@item" height="100px" width="100px"></tr></td> 
+    }
+    
+        <label for="quantity" style="background: rgb(252, 195, 195);">Elegi el Pantalon</label>
+        <input type="number" id="quantity" name="Pantalon" min="1" max="10">
+   
+</div><br><br><br>
+<div>
+    @foreach (string item in @ViewBag.ListaMedias)
+    {
+       <td> <tr> <img src="/Img_Medias/@item" height="120px" width="100px"></tr></td> 
+    }
+        <label for="quantity" style="background: rgb(252, 195, 195);">Elegi las medias</label>
+        <input type="number" id="quantity" name="Medias" min="1" max="10">
+    
+</div><br>
+<input type="submit" value ="Cargar Indumentaria">
+</form>

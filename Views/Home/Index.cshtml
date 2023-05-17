@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h4><a href='@Url.Action("SelectIndumentaria")' style="background: rgb(252, 195, 195);" ><font color="black">Ingresar nueva indumentaria</font></a></h4>
+ 
+    @foreach (string item in @ViewBag.EquiposIndumentaria.Keys)
+    {
+        <div class="contenedor" style="border: 2px solid rgb(252, 195, 195)" style="width:10px">
+        <p><u><b>@item</b></u></p>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="/Img_Camiseta/@ViewBag.EquiposIndumentaria[item].Camiseta" alt="camiseta" width="100px">&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="/Img_Pantalon/@ViewBag.EquiposIndumentaria[item].Pantalon" alt="Pantalon" width="100px">&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="/Img_Medias/@ViewBag.EquiposIndumentaria[item].Media" alt="Medias" width="110px">&emsp;&emsp;&emsp;&emsp;&emsp; 
+        </div><br>
+    }
